@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Infinite Runner</title>
+</head>
+
+<body>
+<canvas id="game" width="400" height="250"></canvas>
+
+<script>
+window.onload = function() {
+// Init variables
+const canvas = document.getElementById("game");
+const contxt = canvas.getContext("2d");
+
+const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
+
+ var game = {
+				player: {
+    			coords: {x:0, y:0},
+          img: new Image()
+    		},
+        state: {
+        	current: 0,
+          menu: 0,
+          game: 1,
+          paused: 2
+        }
+ 		};
+    
+ 
+ let update = () => {
+		// Run game updating
+    if(game.state.current === 1) { // If game is running
+    	
+    }
+    
+    if(game.state.current === 0) { // If were in the main menu
+    	// set background color
+      contxt.fillColor = "#00ff00";
+      contxt.fillRect(20,20,150,100);
+    }
+    
+    if(game.state.current === 2) { // if the game is paused
+    
+    }
+    
+ }
+reqAnimFrame(update);
+}
+</script>
+</body>
+</html>
