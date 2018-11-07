@@ -7,7 +7,7 @@
 <canvas id="game" width="500" height="250"></canvas>
 
 <script>
-window.onload = function() { // window onload not working in jsfiddle
+//window.onload = function() { // window onload not working in jsfiddle
 // Init variables
 const canvas = document.getElementById("game");
 const contxt = canvas.getContext("2d");
@@ -36,9 +36,18 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
     }
     
     if(game.state.current === 0) { // If were in the main menu
+    
     	// set background color
-      contxt.fillStyle = "green";
+      contxt.fillStyle = "#6CABC4";
       contxt.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw Text
+      contxt.fillStyle = "white";
+      contxt.font = "30px Arial";
+      contxt.textAlign = "center";
+			contxt.fillText("Click to Play!", canvas.width/2, canvas.height/2);
+      
+      
     }
     
     if(game.state.current === 2) { // if the game is paused
@@ -46,12 +55,11 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
     }
     
  }
- 
- let hi = document.getElementById("Test");
-    hi.innerHTML = game.state.current;
 
 reqAnimFrame(update);
-};
+//};
+ 
+
 </script>
 </body>
 </html>
