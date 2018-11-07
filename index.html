@@ -47,6 +47,11 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
       contxt.textAlign = "center";
 			contxt.fillText("Click to Play!", canvas.width/2, canvas.height/2);
       
+      // Add Event listener for starting game
+      canvas.addEventListener("click", () => {
+      	canvas.removeEventListener("click");
+      });
+      
       
     }
     
