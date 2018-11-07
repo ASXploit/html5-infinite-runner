@@ -7,7 +7,7 @@
 <canvas id="game" width="400" height="250"></canvas>
 
 <script>
-window.onload = function() {
+window.onload = function() { // window onload not working in jsfiddle
 // Init variables
 const canvas = document.getElementById("game");
 const contxt = canvas.getContext("2d");
@@ -19,6 +19,7 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
     			coords: {x:0, y:0},
           img: new Image()
     		},
+        
         state: {
         	current: 0,
           menu: 0,
@@ -36,8 +37,8 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
     
     if(game.state.current === 0) { // If were in the main menu
     	// set background color
-      contxt.fillColor = "#00ff00";
-      contxt.fillRect(20,20,150,100);
+      contxt.fillStyle = "green";
+      contxt.fillRect(0, 0, canvas.width, canvas.height);
     }
     
     if(game.state.current === 2) { // if the game is paused
@@ -45,8 +46,12 @@ const reqAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimati
     }
     
  }
+ 
+ let hi = document.getElementById("Test");
+    hi.innerHTML = game.state.current;
+
 reqAnimFrame(update);
-}
+};
 </script>
 </body>
 </html>
